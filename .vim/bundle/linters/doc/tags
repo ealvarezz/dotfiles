@@ -1,0 +1,6 @@
+linters	linters.txt	/*linters*
+linters-about	linters.txt	/*linters-about*
+linters-author	linters.txt	/*linters-author*
+linters-commands	linters.txt	/*linters-commands*
+linters-defining	linters.txt	/*linters-defining*
+linters.txt	linters.txt	/*linters.txt*

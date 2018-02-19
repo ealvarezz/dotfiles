@@ -1,5 +1,3 @@
-
-" This must be placed in your home and rename it as .vimrc
 "
 "
 
@@ -19,6 +17,8 @@ function! ToggleHiddenAll()
     endif
 endfunction
 
+set sidescroll=1
+
 "let g:koe_termcolors=16
 let g:syntastic_javascript_checkers = ['jslint']
 let g:syntastic_java_checkers = ['javac', 'checkstyle']
@@ -29,16 +29,19 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 set background=dark
+
 "set t_Co=16
-colorscheme desertedoceanburnt
-"autocmd FileType html colorscheme desertedoceanburnt_html
+"##### colorscheme anderson
+"##### colorscheme skittles_berry
+colorscheme delek
 au BufNewFile,BufRead *.ejs set filetype=html
+au BufNewFile,BufRead *.jsp set filetype=html
 "autocmd FileType javascript colorscheme koe-js
 set tabstop=4
 set shiftwidth=4
 set ts=6
 set number
-
+let NERDTreeMapOpenInTab='<C>'
 let g:sw_exe = "~/sqlwbconsole.sh"
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_always_populate_loc_list = 1
@@ -61,10 +64,16 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
    let g:neocomplete#sources#omni#input_patterns = {}
  endif
 
+set path+=~/Documents/workspace/NetflixClone/src/main/java/netflix_engine/model
+
 nnoremap <S-h> :call ToggleHiddenAll()<CR>
 nnoremap <S-Left> :tabprevious<CR>
 nnoremap <S-Right> :tabnext<CR>
 nnoremap <S-q> :w!<CR>
 nnoremap <S-y> :1,$ s/^\s*//g<CR>
-
-
+nnoremap <C-f> :NERDTreeToggle<CR>
+nnoremap <C-h> :wincmd h<CR>
+nnoremap <C-l> :wincmd l<CR>
+nnoremap <C-k> :wincmd k<CR>
+nnoremap <C-j> :wincmd j<CR>
+nnoremap <S-j> :lclose<CR>
